@@ -2,7 +2,7 @@
 #
 # Assignment Script
 #
-# Use the [Brickman tutorial](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Brickman) 
+# Use the [Brickman tutorial](https://github.com/BigelowLab/ColbyForecasting/wiki/Brickman) 
 # to extract data from the location of Buoy N01 for current conditions. Extract
 # both `SST` and `Tbtm` for every month and then determine the temperature
 # difference `dT`. Make a plot of `dT` (y-axis) as a function of `month` (x-axis).  

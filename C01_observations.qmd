@@ -5,7 +5,7 @@ format: html
 
 # Obtaining observational data
 
-Follow this [wiki page](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Obis) on obtaining data from [OBIS](https://obis.org/).  Keep in mind that you will probably want a species with sufficient number of records in the northwest Atlantic.  Just what constitutes "sufficient" is probably subject to some debate, but a couple of hundred as a minumum will be helpful for learning.  One thing that might help is to be on alert species that are only congregate in one area such as right along the shoreline or only appear in a few months of the year.  It isn't that those species are not worthy of study, but they may make the learning process harder.
+Follow this [wiki page](https://github.com/BigelowLab/ColbyForecasting/wiki/Obis) on obtaining data from [OBIS](https://obis.org/).  Keep in mind that you will probably want a species with sufficient number of records in the northwest Atlantic.  Just what constitutes "sufficient" is probably subject to some debate, but a couple of hundred as a minumum will be helpful for learning.  One thing that might help is to be on alert species that are only congregate in one area such as right along the shoreline or only appear in a few months of the year.  It isn't that those species are not worthy of study, but they may make the learning process harder.
 
 You should feel free to get the data for a couple of different species, if one becomes a headache with our given resources, then you can switch easily to another.
 
@@ -16,7 +16,7 @@ We need a dataset that covers the same area and time period that the [Brickman d
 
 # Tour of your data
 
-It is **SO IMPORTANT** to have a really good handle on your data. To get that handle you have to explore it.  There is a branch of data science devoted to data exploration called [Exploratory Data Analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html).  We'll explore your data here, but we assume that you have reviewed and tried your hand with the examples in the wiki for [tabular data](https://github.com/BigelowLab/ColbyForecasting2025/wiki/tables), [observations](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Obis), the [coastlines](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Coastlines) and the [Brickman data](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Brickman).  Even if you have walked through these tutorials you may find yourself stumped and stymied.  That's all part of the learning process - just keep moving, inquiring and trying.
+It is **SO IMPORTANT** to have a really good handle on your data. To get that handle you have to explore it.  There is a branch of data science devoted to data exploration called [Exploratory Data Analysis](https://r4ds.had.co.nz/exploratory-data-analysis.html).  We'll explore your data here, but we assume that you have reviewed and tried your hand with the examples in the wiki for [tabular data](https://github.com/BigelowLab/ColbyForecasting/wiki/tables), [observations](https://github.com/BigelowLab/ColbyForecasting/wiki/Obis), the [coastlines](https://github.com/BigelowLab/ColbyForecasting/wiki/Coastlines) and the [Brickman data](https://github.com/BigelowLab/ColbyForecasting/wiki/Brickman).  Even if you have walked through these tutorials you may find yourself stumped and stymied.  That's all part of the learning process - just keep moving, inquiring and trying.
 
 
 # Setup
@@ -76,7 +76,7 @@ occurrence = obs |>
   browse_obis()
 ```
 
-Next let's think about what our minimum requirements might be in oirder to build a model. To answer that we need to think about our environmental covariates in the Brickman data](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Brickman). That data has dimensions of x (longitude), y (latitude) and month.  In order to match obseravtions with that data, our observations must be complete in those three variables.  Let's take a look at a summary of the observations which will indicate the number of elements missing in each variable.
+Next let's think about what our minimum requirements might be in oirder to build a model. To answer that we need to think about our environmental covariates in the Brickman data](https://github.com/BigelowLab/ColbyForecasting/wiki/Brickman). That data has dimensions of x (longitude), y (latitude) and month.  In order to match obseravtions with that data, our observations must be complete in those three variables.  Let's take a look at a summary of the observations which will indicate the number of elements missing in each variable.
 
 ```{r summary_obs}
 summary(obs)

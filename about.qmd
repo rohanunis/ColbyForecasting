@@ -11,8 +11,8 @@ Brought to you by the [Tandy Center for Ocean Forecasting](https://www.bigelow.o
 
 [Ben Tupper](mailto:btupper@bigelow.org)
 
-Raising questions or issues: If you have a question, start a new "issue" on [the github issues tab](https://github.com/BigelowLab/ColbyForecasting2025/issues).  If a question has been posed by another, and you think you can help with the answer then please feel free to respond. 
+Raising questions or issues: If you have a question, start a new "issue" on [the github issues tab](https://github.com/BigelowLab/ColbyForecasting/issues).  If a question has been posed by another, and you think you can help with the answer then please feel free to respond. 
 
 # Website
 
-We build the website using [quarto](https://quarto.org/) which is perfect from transforming [RMarkdown](https://rmarkdown.rstudio.com/ pages into a website with minimal investment. See this [wiki page](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Quarto) if you would like to add your work to you own fork of the class repository.
+We build the website using [quarto](https://quarto.org/) which is perfect from transforming [RMarkdown](https://rmarkdown.rstudio.com/ pages into a website with minimal investment. See this [wiki page](https://github.com/BigelowLab/ColbyForecasting/wiki/Quarto) if you would like to add your work to you own fork of the class repository.

@@ -132,7 +132,7 @@ Hmmmm. Why does there seem to be a strong shift between 2020 and 2055, while the
 
 
 :::{.callout-note}
-Don't forget that [there are other ways](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Spatial) to plot array based spatial data.
+Don't forget that [there are other ways](https://github.com/BigelowLab/ColbyForecasting/wiki/Spatial) to plot array based spatial data.
 :::
 
 ## Save the predictions

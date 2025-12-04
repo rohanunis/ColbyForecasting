@@ -15,7 +15,7 @@ execute:
   cache: false
 
 website:
-  title: "Colby Forecasting 2025"
+  title: "Colby Forecasting"
   page-navigation: true
   back-to-top-navigation: true
   page-footer: "Copyright 2025, Bigelow Laboratory for Ocean Science" 
@@ -43,11 +43,11 @@ website:
       - icon: github
         menu:
           - text: Source Code
-            url:  https://github.com/BigelowLab/ColbyForecasting2025
+            url:  https://github.com/BigelowLab/ColbyForecasting
           - text: Report a bug or ask a question
-            url:  https://github.com/BigelowLab/ColbyForecasting2025/issues
+            url:  https://github.com/BigelowLab/ColbyForecasting/issues
           - text: Wiki
-            url:  https://github.com/BigelowLab/ColbyForecasting2025/wiki
+            url:  https://github.com/BigelowLab/ColbyForecasting/wiki
 format:
   html:
     theme: cosmo

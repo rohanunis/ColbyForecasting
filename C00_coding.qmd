@@ -18,13 +18,13 @@ There are many [RStudio tutorials](https://duckduckgo.com/?q=introduction+to+rst
 
 # Getting the software and data you will need
 
-Use this [wiki page](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Courseware) to guide you through the process of installing the software you'll need for this course, "the courseware".
+Use this [wiki page](https://github.com/BigelowLab/ColbyForecasting/wiki/Courseware) to guide you through the process of installing the software you'll need for this course, "the courseware".
 
 # Coding with R
  
 There are [SO MANY TUTORIALS](https://duckduckgo.com/?t=ffab&q=introduction+to+R&atb=v342-1&ia=web), some are great and some not so much. [This one](https://intro2r.com/) is a pretty good baby-steps approach and is quite up-to-date. You may find another that you prefer - let us know what works for you.
 
-Take time to look at the tutorials in our [wiki](https://github.com/BigelowLab/ColbyForecasting2025/wiki).  Especially the one on [working with tabular data](https://github.com/BigelowLab/ColbyForecasting2025/wiki/tables).
+Take time to look at the tutorials in our [wiki](https://github.com/BigelowLab/ColbyForecasting/wiki).  Especially the one on [working with tabular data](https://github.com/BigelowLab/ColbyForecasting/wiki/tables).
 
 There is so much to learning a programming language - it takes diving in to really get going. We'll try to give you enough so that you can continue learning on your own.  
 
@@ -97,7 +97,7 @@ text(st_geometry(buoys), labels = buoys$id, cex = 0.7, adj = c(1,-0.1))
 
 ### Array data (aka raster data)
 
-Often spatial data comes in grids, like regular arrays of pixels.  These are great for all sorts of data like satellite images, bathymetry maps and environmental modeling data.  We'll be working with environmental modeling data which we call "Brickman data".  You can learn more about [Brickman data in the wiki](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Brickman).  We'll be glossing over the details here, but there's lots of detail in the wiki.
+Often spatial data comes in grids, like regular arrays of pixels.  These are great for all sorts of data like satellite images, bathymetry maps and environmental modeling data.  We'll be working with environmental modeling data which we call "Brickman data".  You can learn more about [Brickman data in the wiki](https://github.com/BigelowLab/ColbyForecasting/wiki/Brickman).  We'll be glossing over the details here, but there's lots of detail in the wiki.
 
 We'll read in the database that tracks 82 Brickman data files, and then immediately filter out the rows that define the "PRESENT" scenario (where present means 1982–2013) and monthly climatology models.
 
@@ -107,7 +107,7 @@ db = brickman_database() |>
 db
 ```
 
-If you are wondering about filtering a table, be sure to [check out the wiki on tabular data](https://github.com/BigelowLab/ColbyForecasting2025/wiki/tables) to get started.
+If you are wondering about filtering a table, be sure to [check out the wiki on tabular data](https://github.com/BigelowLab/ColbyForecasting/wiki/tables) to get started.
 
 You might be wondering what that `|>` is doing. It is called a pipe, and it delivers the output of one function to the next function as the first parameter (aka argument). For example, `brickman_database()` produces a table, that table is immediately passed into `filter()` to choose rows that match our criteria.   
 
@@ -160,7 +160,7 @@ plot(current['SST'], hook = add_coast_and_buoys)
 ::: {.callout-note appearance="simple"}
 Use the menu option `File > New File > R Script` to create a blank file. Save the file (even though it is empty) in the "assignment" directory as "assignment_script_1.R".  Use this file to build a script that meets the following challenge.  Note that the existing file, "assignment_script_0.R" is already there as an example.
 
-Use the [Brickman tutorial](https://github.com/BigelowLab/ColbyForecasting2025/wiki/Brickman) to extract data from the location of Buoy M01 for RCP4.5 2055. Make a plot of `SST` (y-axis) as a function of `month` (x-axis).  Here's one possible outcome.
+Use the [Brickman tutorial](https://github.com/BigelowLab/ColbyForecasting/wiki/Brickman) to extract data from the location of Buoy M01 for RCP4.5 2055. Make a plot of `SST` (y-axis) as a function of `month` (x-axis).  Here's one possible outcome.
 
 ![Buoy M01, RCP4.5 2055](images/buoy_M01_RCP45_2055.png)
 :::

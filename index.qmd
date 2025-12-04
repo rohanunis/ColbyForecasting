@@ -15,9 +15,9 @@ This document is comprised of sections: forecasting and coding with R programmin
 
 We have a saying at Bigelow Lab, "there's no such thing as a dumb question, but the quality of the answers you get may vary widely." This is so true!
 
-If you have a class, coding or forecasting question, start a new "issue" on [the github issues tab](https://github.com/BigelowLab/ColbyForecasting2025/issues).  If a question has been posed by another, and you think you can help with the answer, then please feel free to respond. If you have a personal question or issue, then contact the instructors directly.
+If you have a class, coding or forecasting question, start a new "issue" on [the github issues tab](https://github.com/BigelowLab/ColbyForecasting/issues).  If a question has been posed by another, and you think you can help with the answer, then please feel free to respond. If you have a personal question or issue, then contact the instructors directly.
 
 # The [wiki](https://en.wikipedia.org/wiki/Wiki)
 
-Some ancillary content for the course has been placed in what is called a [wiki](https://github.com/BigelowLab/ColbyForecasting2025/wiki). In theory anyone can contribute to a wiki, but in practice only a few do. We are open to suggestions for improvements and additions.
+Some ancillary content for the course has been placed in what is called a [wiki](https://github.com/BigelowLab/ColbyForecasting/wiki). In theory anyone can contribute to a wiki, but in practice only a few do. We are open to suggestions for improvements and additions.
 

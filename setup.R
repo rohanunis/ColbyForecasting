@@ -7,12 +7,9 @@
 packages = list(
   CRAN = c("remotes", "usethis", "ggplot2", "readr", "tidyr", "tidymodels", "sf", 
            "imager", "stars", "rnaturalearth", "robis", "httr", "yaml",
-           "effectplots", "ranger", "bundle", "butcher", "dplyr"),
+           "effectplots", "ranger", "bundle", "butcher", "dplyr", "tidysdm"),
   GITHUB = list(
-    #tidysdm = c(repo = "EvolEcolGroup/tidysdm", ref = "dev"))
-    ColbyForecastingDocs = c(repos = "BigelowLab/ColbyForecastingDocs", ref = "main")),
-  RUNIV = list(tidysdm = c("https://evolecolgroup.r-universe.dev", 
-                             "https://cloud.r-project.org"))
+    ColbyForecastingDocs = c(repos = "BigelowLab/ColbyForecastingDocs", ref = "main"))
 )
 
 # And here we check for prior installations and install locally as needed
@@ -32,19 +29,11 @@ ix = names(packages$GITHUB) %in% installed
   }
 }
 
-if ("RUNIV" %in% names(packages)){
-  ix = names(packages$RUNIV) %in% installed
-  for (package in names(packages$RUNIV[!ix])){
-    install.packages(package, repos = packages$RUNIV[[package]])
-  }
-}
-
 
 # Here we simply load each package form the library of packages
 suppressPackageStartupMessages({
   for (package in packages$CRAN) library(package, character.only = TRUE)
   for (package in names(packages$GITHUB)) library(package, character.only = TRUE)
-  for (package in names(packages$RUNIV)) library(package, character.only = TRUE, quietly = TRUE)
 })
 
 # Next we check the 'functions' directory for ".R" files and source those
@@ -56,6 +45,6 @@ for (f in list.files("functions", pattern = glob2rx("*.R"), full.names = TRUE)) 
 # The data directory has top level subdirectories ("buoys", "coast", "brickman")
 # that contain data used by all.  It also may have one or more yearly directories
 # for "personal data directories" ala "2024", "2025"
-ROOT_DATA_PATH = "~/Dropbox/code/projects/ColbyForecasting_data"
+ROOT_DATA_PATH = "~/ColbyForecasting_data"
 
 
