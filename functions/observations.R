@@ -1,27 +1,80 @@
 
-read_observations = function(scientificname = "Mola mola",
-                             minimum_year = 1970, 
-                             ...){
+read_observations = function(
+    scientificname = "Lophius americanus",
+    minimum_year = 1970, 
+    require_count = TRUE,
+    basis_allowed = c("HumanObservation","Occurrence")
+){
+  if(FALSE){
+    scientificname = "Lophius americanus"
+    minimum_year = 1970 
+    require_count = TRUE
+    basis_allowed = c("HumanObservation","Occurrence")
+    
+  }
+  obs = read_obis(scientificname)
   
-  #' Read raw OBIS data and then filter it
-  #' 
-  #' @param scientificname chr, the name of the species to read
-  #' @param minimum_year num, the earliest year of observation to accept or 
-  #'   set to NULL to skip
-  #' @param ... other arguments passed to `read_obis()`
-  #' @return a filtered table of observations
+  # if (sf::st_is(obs, "sf")) {
+  #   coords = sf::st_coordinates(obs)
+  #   obs$decimalLongitude = coords[, 1]
+  #   obs$decimalLatitude  = coords[, 2]
+  # }
   
-  # Happy coding!
+  dim_start = dim(obs)
   
-  # read in the raw data
-  x = read_obis(scientificname, ...) |>
-    dplyr::mutate(month = factor(month, levels = month.abb))
+  obs = obs |>
+    dplyr::filter(
+      !is.na(eventDate)
+      #!is.na(decimalLongitude),
+      #!is.na(decimalLatitude)
+    )
   
-  # if the user provided a non-NULL filter by year
   if (!is.null(minimum_year)){
-    x = x |>
-      filter(year >= minimum_year)
+    obs = obs |>
+      dplyr::filter(year >= minimum_year)
   }
   
-  return(x)
+  if (!is.null(basis_allowed)){
+    obs = obs |>
+      dplyr::filter(basisOfRecord %in% basis_allowed)
+  }
+  
+  if (require_count){
+    obs = obs |>
+      dplyr::filter(!is.na(individualCount))
+  }
+  
+  obs = obs |>
+    dplyr::mutate(month = factor(month, levels = month.abb))
+  
+ # obs_sf = sf::st_as_sf(
+ #   obs,
+ #   coords = c("decimalLongitude","decimalLatitude"),
+ #   crs = 4326,
+ #   remove = FALSE
+ # )
+  
+  db = brickman_database() |>
+    dplyr::filter(scenario == "STATIC", var == "mask")
+  
+  mask = read_brickman(db)
+  
+  hitOrMiss = extract_brickman(mask, obs)
+  
+  obs = obs |>
+    dplyr::filter(!is.na(hitOrMiss$value))
+  
+  dim_end = dim(obs)
+  
+  message(
+    sprintf(
+      "Dropped %d of %d records (%.1f%%)",
+      dim_start[1] - dim_end[1],
+      dim_start[1],
+      100 * (dim_start[1] - dim_end[1]) / dim_start[1]
+    )
+  )
+  
+  return(obs)
 }
+
