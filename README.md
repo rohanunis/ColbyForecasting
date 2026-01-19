@@ -110,7 +110,8 @@ This schedule has built in flexibility. Changes will be noted.
 
 - Lecture: Forecasting Methodologies
 
-- Discussion: Forecasting unintended consequences
+- Discussion: [Data sources](https://docs.google.com/presentation/d/1PpfSl6OvxwIxgT1FKNLdmkDN_NPAM1BXypjVqHkhvxo/edit?slide=id.p#slide=id.p)
+  [Signup](https://docs.google.com/spreadsheets/d/1f5NuX2NZzx7QNLqc7Td1TvKZ_TO9Y4yHiwl3zuVqFVA/edit?gid=0#gid=0)
 
 - R Tutorial: [Background
   Points](https://bigelowlab.github.io/ColbyForecasting/C02_background.html)
@@ -129,10 +130,13 @@ This schedule has built in flexibility. Changes will be noted.
 
 - Lecture: Algorithm Accountability
 
+- Discussion: Biases in algorithms
+
 - R Tutorial:
   [Modeling](https://bigelowlab.github.io/ColbyForecasting/C04_models.html)
 
-- Reading assignment for next time: TBD
+- Reading assignment for next time: [Pichler 2022](https://github.com/BigelowLab/ColbyForecasting/blob/main/reading/Pichler2022.pdf)
+- Optional assignment: Work on the introduction for the final writeup. Recall the orienting questions: What is your species? Why is it important? What are some of the management, industry, or conservation decisions that could benefit from a forecast? If you send me text with citations by Monday, I'll get feedback to you over the course of the week.
 
 ## Monday Jan 19
 
@@ -177,10 +181,11 @@ in future decades.
 
 - Continuation of presentations.
 
-- Final project due
+- Final project due (Saturday Jan 31)
   - A ~2,000 word write-up of your Gulf of Maine projection. [Details
     can be found
     here](https://github.com/BigelowLab/ColbyForecasting/blob/main/assignments/writeup.md).
+
 
 ## **LEARNING OUTCOMES**
 
