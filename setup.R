@@ -42,7 +42,8 @@ suppressPackageStartupMessages({
 slice <- dplyr::slice
 
 # Next we check the 'functions' directory for ".R" files and source those
-for (f in list.files("functions", pattern = glob2rx("*.R"), full.names = TRUE)) {
+
+for (f in list.files("f/home/rohanunis/ColbyForecasting/functions", pattern = glob2rx("*.R"), full.names = TRUE)) {
   source(f, echo = FALSE)
 }
 

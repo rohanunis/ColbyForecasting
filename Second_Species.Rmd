@@ -1,0 +1,103 @@
+---
+title: "My Second Species"
+output: github_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+source("setup.R")
+```
+
+## GitHub Documents
+
+This is an R Markdown format used for publishing markdown documents to GitHub. When you click the **Knit** button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.
+
+## Including Code
+
+You can include R code in the document as follows:
+
+```{r read_model_input}
+model_input = read_model_input(
+  scientificname = "Gadus_morhua"
+)
+
+model_input
+
+```
+
+
+```{r read_brickman}
+db = brickman_database() |>
+  dplyr::filter(
+    scenario == "PRESENT",
+    interval == "mon"
+  )
+present = read_brickman(db, add = "depth")
+
+
+```
+
+```{r collinearity}
+keep = filter_collinear(present, method = "cor_caret", cutoff = 0.65)
+keep
+
+
+```
+
+```{r force_vars}
+keep = c("depth","month",keep)
+keep
+```
+
+```{r extract_covariates}
+present_env = present |>
+  dplyr::select(where(is.numeric))
+
+
+
+variables = extract_brickman(
+  present,
+  model_input,
+  form = "wide"
+)
+variables
+
+
+
+```
+
+```{r wrangle_variables}
+variables = variables |>
+  mutate(class = model_input$class) |>    # the $ extracts a column 
+  select(-.id)                            # the minus means "deselect" or "drop"
+variables
+```
+
+```{r pres_vs_bg, warning=FALSE}
+plot_pres_vs_bg(
+  variables |> dplyr::select(-month),
+  "class"
+)
+```
+
+```{r make_config}
+cfg = list(
+  version = "v1",
+  scientificname = "Gadus morhua",
+  background = "average of observations per month",
+  keep_vars = keep
+)
+
+cfg
+```
+
+```{r save_files}
+make_path(data_path("models"))
+write_configuration(cfg)
+
+write_model_input(
+  variables,
+  scientificname = "Gadus morhua",
+  version = "v1"
+)
+```
